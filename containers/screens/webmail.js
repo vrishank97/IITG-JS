@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import {
 	Text,
 	View,
-	processColor
+	processColor,
+	WebView,
+	Linking
 } from 'react-native';
 
 class WebmailScreen extends React.Component {
-  render() {
+    render() {
     const uri = 'https://goo.gl/xwPGBt';
     return (
-      <WebView
+        <WebView
         ref={(ref) => { this.webview = ref; }}
         source={{ uri }}
         onNavigationStateChange={(event) => {
           if (event.url !== uri) {
             this.webview.stopLoading();
-            Linking.openURL(event.url);
-          }>
-          </Webview>
+             Linking.openURL(event.url);
+          }}}/>
     	);
 	}
 }
 
 
-export default Webmail;
+export default WebmailScreen;
