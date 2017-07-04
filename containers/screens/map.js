@@ -5,7 +5,7 @@ import {
 	Image
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-
+import PhotoView from 'react-native-photo-view';
 
 
 class MapScreen extends React.Component {
@@ -14,7 +14,11 @@ class MapScreen extends React.Component {
   };
   render() {
     return (
-      <Image source={require('./img/check.png')} style={{width: 370, height: 400}} />
+      <PhotoView
+  source={require('./img/check.png')}
+  minimumZoomScale={0.5}
+  maximumZoomScale={3}
+  style={{width: 370, height: 400}} />
     );
   }
 }
