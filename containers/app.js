@@ -6,6 +6,7 @@ import {
   Button,
   WebView,
   Linking,
+  TouchableOpacity,
   StyleSheet,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
@@ -24,24 +25,32 @@ class HomeScreen extends React.Component {
     return (
       <View style={ styles.flex_column }>
       <View style={ styles.flex_row }>
-        <Button
-          onPress={() => navigate('Map')}
-          title="Campus Map"
-        />
-        <Button
-          onPress={() => navigate('Webmail')}
-          title="Webmail"
-        />
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Campus Map</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('Webmail')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Webmail</Text>
+          </View>
+          </TouchableOpacity>
       </View>
       <View style={ styles.flex_row }>
-        <Button
-          onPress={() => navigate('Map')}
-          title="Time Table"
-        />
-        <Button
-          onPress={() => navigate('Map')}
-          title="Bus Timings"
-        />
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Time Table</Text>
+          </View>
+          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Bus Timings</Text>
+          </View>
+          </TouchableOpacity>
       </View>
       </View>
     );
@@ -70,8 +79,23 @@ const styles = StyleSheet.create({
   flex_row: {
     flex:1,
     flexDirection:'row',
-    justifyContent:'space-between',
+    justifyContent:'space-around',
     alignItems:'center'
+  },
+  button: {
+    borderRadius:25,
+    marginRight:40,
+    marginLeft:40,
+    padding:20,
+    marginBottom: 30,
+    width: 150,
+    //height:100,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    //padding: 20,
+    color: 'white'
   }
 });
 
