@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   AppRegistry,
@@ -52,6 +53,34 @@ class HomeScreen extends React.Component {
           </View>
           </TouchableOpacity>
       </View>
+      <View style={ styles.flex_row }>
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Taxi Services</Text>
+          </View>
+          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Internet Settings</Text>
+          </View>
+          </TouchableOpacity>
+      </View>
+      <View style={ styles.flex_row }>
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Places</Text>
+          </View>
+          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('Map')}>
+          <View style={ styles.button }>
+            <Text style={ styles.buttonText }>Gymkhana</Text>
+          </View>
+          </TouchableOpacity>
+      </View>
       </View>
     );
   }
@@ -83,7 +112,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   button: {
-    borderRadius:25,
+    borderRadius:15,
     marginRight:40,
     marginLeft:40,
     padding:20,
